@@ -1,8 +1,9 @@
 // src/sections/Insights.jsx
-import React, { useState, useEffect } from 'react';
-import {Astroid} from 'lucide-react';
-import { getInsights } from '../services/insightsService';
-import InsightCard from '../components/InsightCard';
+import { useState, useEffect } from 'react';
+import { getInsights } from '../../services/insightsService';
+import InsightCard from '../cards/InsightCard';
+import Badge from '../ui/Badge';
+import SectionTitle from '../ui/SectionTitle';
 
 
 const Insights = () => {
@@ -30,18 +31,15 @@ const Insights = () => {
         
         {/* EN-TÊTE */}
         <div className="text-center mb-16">
-          <div className="flex justify-center mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-xs text-violet-300 mb-6 rounded-full border border-violet-500/20 bg-violet-500/10">
-              <Astroid className="w-2 h-2 fill-current" />
-              Insights
-              <Astroid className="w-2 h-2 fill-current" />
-            </span>
+          {/* Badge */}
+          <div className="flex justify-center mb-12">
+            <Badge text="Insights" />
           </div>
 
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-24">
-            Explore Agentic AI <br className="hidden md:block" />
-            <span className="text-violet-300">Through real-world scenes</span>
-          </h2>
+          <SectionTitle 
+            mainText="Explore Agentic AI" 
+            highlightText="Through real-world scenes" 
+          />
         </div>
 
         {/* ZONE DE MESSAGE D'ERREUR */}

@@ -1,6 +1,6 @@
-import React from 'react';
-import {features} from '../data/features';
-import {Astroid} from 'lucide-react';
+import {features} from '../../data/features';
+import Badge from '../ui/Badge';
+import SectionTitle from '../ui/SectionTitle';
 
 
 const Features = () => {
@@ -8,20 +8,17 @@ const Features = () => {
     <section id="features-section" className="py-24 border-t border-slate-950/50 relative">
       {/* badge */}
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-12">
+          {/* Badge */}
           <div className="flex justify-center mb-12">
-            <span className="inline-flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-              <Astroid className="w-2 h-2 fill-current" />
-                Features
-              <Astroid className="w-2 h-2 fill-current" />
-            </span>
+            <Badge text="Features" />
           </div>
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-24">
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-12">
-            Everything You Need to Build <br className="hidden md:block" />
-            <span className="text-violet-300">With powerful AI agents</span>
-          </h2>
+          <SectionTitle 
+            mainText="Everything You Need to Build" 
+            highlightText="With powerful AI agents" 
+          />
         </div>
 
         {/* GRILLE GRID */}
@@ -38,7 +35,7 @@ const Features = () => {
                 <h3 className="text-xl font-bold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-500">
                   {item.description}
                 </p>
               </div>

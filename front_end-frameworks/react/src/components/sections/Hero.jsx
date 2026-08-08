@@ -1,5 +1,5 @@
-import React from 'react';
-import { Asterisk, ArrowRight } from 'lucide-react'; // Vérifiez si vous utilisez Asterisk ou Astroid
+import Button from '../ui/Button';
+import Badge from '../ui/Badge';
 
 const Hero = () => {
   return (
@@ -27,11 +27,7 @@ const Hero = () => {
         
         {/* Badge */}
         <div className="flex justify-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-            <Asterisk className="w-2 h-2 fill-current" />
-            The future of coding
-            <Asterisk className="w-2 h-2 fill-current" />
-          </span>
+          <Badge text="The future of coding" />
         </div>
 
         {/* Titres */}
@@ -45,42 +41,42 @@ const Hero = () => {
 
         {/* Boutons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-          <a 
+          <Button 
+            text="Start learning with Holberton School" 
             href="#Started" 
-            className="flex items-center gap-2 px-4 py-2 font-semibold text-white rounded-md bg-violet-500 hover:bg-violet-600 shadow-lg shadow-violet-500/40 transition-all duration-200"
-          >
-            Start learning with Holberton School
-            <ArrowRight className="w-5 h-5" />
-          </a>
-          <a 
+            variant="primary" 
+            showIcon={true} 
+          />
+          
+          <Button 
+            text="Methodology" 
             href="#Methodology" 
-            className="px-4 py-2 font-semibold text-white rounded-md border border-slate-800 bg-slate-950 hover:bg-slate-900 transition-all duration-200"
-          >
-            Methodology
-          </a>
+            variant="secondary" 
+            showIcon={false} 
+          />
         </div>
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           
           <div className="p-6 rounded-xl border border-slate-800 text-center bg-slate-950 shadow-xl shadow-slate-950/40">
-            <h3 className="text-3xl md:text-4xl font-bold text-violet-300 mb-2">10K+</h3>
-            <p className="text-sm text-slate-300">Active agents</p>
+            <h3 className="text-3xl md:text-4xl font-black text-violet-300 mb-2">10K+</h3>
+            <p className="text-sm text-slate-500">Active agents</p>
           </div>
 
           <div className="p-6 rounded-xl border border-slate-800 text-center bg-slate-950 shadow-xl shadow-slate-950/40">
-            <h3 className="text-3xl md:text-4xl font-bold text-violet-300 mb-2">99.9%</h3>
-            <p className="text-sm text-slate-300">Uptime</p>
+            <h3 className="text-3xl md:text-4xl font-black text-violet-300 mb-2">99.9%</h3>
+            <p className="text-sm text-slate-500">Uptime</p>
           </div>
 
           <div className="p-6 rounded-xl border border-slate-800 text-center bg-slate-950 shadow-xl shadow-slate-950/40">
-            <h3 className="text-3xl md:text-4xl font-bold text-violet-300 mb-2">50M+</h3>
-            <p className="text-sm text-slate-300">Tasks automated</p>
+            <h3 className="text-3xl md:text-4xl font-black text-violet-300 mb-2">50M+</h3>
+            <p className="text-sm text-slate-500">Tasks automated</p>
           </div>
 
           <div className="p-6 rounded-xl border border-slate-800 text-center bg-slate-950 shadow-xl shadow-slate-950/40">
-            <h3 className="text-3xl md:text-4xl font-bold text-violet-300 mb-2">24/7</h3>
-            <p className="text-sm text-slate-300">Support</p>
+            <h3 className="text-3xl md:text-4xl font-black text-violet-300 mb-2">24/7</h3>
+            <p className="text-sm text-slate-500">Support</p>
           </div>
           
         </div>

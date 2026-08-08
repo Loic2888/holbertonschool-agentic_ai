@@ -1,26 +1,23 @@
-import React from 'react';
-import {Astroid} from 'lucide-react';
-import {steps} from '../data/steps';
+import Badge from '../ui/Badge';
+import {steps} from '../../data/steps';
+import SectionTitle from '../ui/SectionTitle';
 
 const About = () => {
   return (
     <section id="about-section" className="py-24 border-t border-slate-950/50 relative">
             {/* badge */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
+        {/* Badge */}
         <div className="flex justify-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-            <Astroid className="w-2 h-2 fill-current" />
-            What is Agentic AI?
-            <Astroid className="w-2 h-2 fill-current" />
-          </span>
+          <Badge text="What is agentic AI?" />
         </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-12">
-          AI that does more than answer <br className="hidden md:block" />
-          <span className="text-violet-300">It acts with purpose</span>
-        </h2>
+        <SectionTitle 
+          mainText="AI that does more than answer" 
+          highlightText="It acts with purpose" 
+        />
 
         <p className="text-sm md:text-base text-slate-300 max-w-2xl mx-auto mb-20">
           Agentic AI refers to artificial intelligence systems dessigned to pursue goals, make decisions, use tools, and adapt their actions across multiple steps. Instead of only responding to a single prompt, an AI agent can break down a task, plan a strategy, execute actions, evaluate result, and continue until the objective is reached.

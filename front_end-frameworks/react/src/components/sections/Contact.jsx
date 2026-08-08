@@ -1,5 +1,8 @@
-import React, {useState} from 'react';
-import { ArrowRight, Sparkles, FolderCode, UsersRound, Astroid, User, Mail, AtSign } from 'lucide-react';
+import {useState} from 'react';
+import {Sparkles, FolderCode, UsersRound, User, Mail, AtSign } from 'lucide-react';
+import Button from '../ui/Button';
+import Badge from '../ui/Badge';
+import SectionTitle from '../ui/SectionTitle';
 
 
 const Contact = () => {
@@ -32,6 +35,12 @@ const Contact = () => {
     }, 1500);
   };
 
+  // Vérification de la validité du formulaire
+  const isFormValid = 
+    formData.fullName.trim().length > 0 && 
+    formData.email.trim().length > 0 && 
+    formData.message.trim().length >= 10;
+
   return (
     <section id="contact-section" className="py-24 border-t relative">
 
@@ -54,37 +63,33 @@ const Contact = () => {
 
       {/* badge */}
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-12">
+        {/* Badge */}
         <div className="flex justify-center mb-12">
-          <span className="inline-flex items-center gap-2 px-4 py-2 text-xs text-violet-300 rounded-full border border-violet-500/20 bg-violet-500/10">
-            <Astroid className="w-2 h-2 fill-current" />
-              Start your AI journey
-            <Astroid className="w-2 h-2 fill-current" />
-          </span>
+          <Badge text="Start your AI journey" />
         </div>
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 text-center mb-24">
-        <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight leading-none mb-12">
-          Ready to Explore <br className="hidden md:block" />
-          <span className="text-violet-300">Agentic AI?</span>
-        </h2>
+        <SectionTitle 
+          mainText="Ready to Explore" 
+          highlightText="Agentic AI?" 
+        />
       </div>
 
       {/* Boutons */}
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-        <a 
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 relative z-10">
+        <Button 
+          text="Enroll at Holberton School" 
           href="#Started" 
-          className="flex items-center gap-2 px-4 py-2 font-semibold text-white rounded-md bg-violet-500 hover:bg-violet-600 shadow-xl shadow-violet-500/30 transition-all duration-200"
-        >
-          Enroll at Holberton School
-          <ArrowRight className="w-5 h-5" />
-        </a>
-        <a 
+          variant="primary" 
+          showIcon={true} 
+        />
+        <Button 
+          text="Need more information?" 
           href="#Methodology" 
-          className="px-4 py-2 relative z-10 font-semibold text-white rounded-md border border-slate-800 bg-slate-950 hover:bg-slate-900/50 transition-all duration-200"
-        >
-          Need more information?
-        </a>
+          variant="secondary" 
+          showIcon={false}
+        />
       </div>
 
       {/* --- SHORT LIST OF HIGHLIGHTS --- */}
@@ -130,7 +135,7 @@ const Contact = () => {
               value={formData.fullName}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
+              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
             />
           </div>
 
@@ -148,7 +153,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-all"
+              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all"
             />
           </div>
 
@@ -166,14 +171,14 @@ const Contact = () => {
               onChange={handleChange}
               required
               rows="4"
-              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-slate-950 focus:ring-1 focus:ring-violet-500 transition-all resize-none"
+              className="w-full px-4 py-3 bg-black border border-slate-800 rounded-md text-white placeholder-slate-600 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition-all resize-none"
             ></textarea>
           </div>
 
           {/* Bouton de Soumission */}
           <button
             type="submit"
-            disabled={isSending}
+            disabled={isSending || !isFormValid}
             className="w-full mt-2 flex justify-center items-center gap-2 py-3 px-4 bg-violet-500 hover:bg-violet-600 text-white font-bold rounded-lg shadow-lg shadow-violet-500/40 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isSending ? (
