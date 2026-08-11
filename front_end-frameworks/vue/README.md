@@ -1,5 +1,7 @@
 # Agentic AI Landing Page - React to Vue 3 Migration
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Site-violet?style=for-the-badge)](https://loic2888.github.io/holbertonschool-agentic_ai/vue)
+
 This project is a modern, responsive landing page exploring the concept of "Agentic AI." Originally built with React, this project has been fully migrated to **Vue 3** (Composition API) component-by-component within the same repository structure. 
 
 This project was built for the **Holberton School Front-end Frameworks curriculum**.
