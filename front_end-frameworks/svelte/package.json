@@ -1,0 +1,28 @@
+{
+  "name": "svelte",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "deploy": "npm run build && gh-pages -d dist --dest svelte --add"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@sveltejs/vite-plugin-svelte": "^7.2.0",
+    "eslint": "^10.8.1",
+    "eslint-plugin-svelte": "^3.22.0",
+    "gh-pages": "^6.3.0",
+    "globals": "^17.10.0",
+    "svelte": "^5.56.8",
+    "vite": "^8.2.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "lucide-svelte": "^1.0.1",
+    "tailwindcss": "^4.3.3"
+  }
+}
