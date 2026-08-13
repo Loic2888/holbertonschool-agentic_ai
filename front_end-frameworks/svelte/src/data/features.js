@@ -1,5 +1,5 @@
 // src/data/features.js
-import { Wrench, Workflow, Bot, Brain, ShieldCheck, Database } from 'lucide-react';
+import { Wrench, Workflow, Bot, Brain, ShieldCheck, Database } from 'lucide-svelte';
 
 export const features = [
   {
